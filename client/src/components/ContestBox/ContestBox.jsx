@@ -1,64 +1,44 @@
 import React from 'react';
-import moment from 'moment';
 import styles from './ContestBox.module.sass';
 import CONSTANTS from '../../constants';
+import { formatDiffDate, ucFirstLetter } from '../../utils/functions';
 
-const ContestBox = props => {
-  const getTimeStr = () => {
-    const diff = moment.duration(moment().diff(moment(props.data.createdAt)));
-    let str = '';
-    if (diff._data.days !== 0) str = `${diff._data.days}d `;
-    if (diff._data.hours !== 0) str += `${diff._data.hours}h`;
-    if (str.length === 0) str = 'less than one hour';
-    return str;
-  };
-
+const ContestBox = ({ data, goToExtended }) => {
   const getPreferenceContest = () => {
-    const { data } = props;
     if (data.contestType === CONSTANTS.NAME_CONTEST) return data.typeOfName;
     if (data.contestType === CONSTANTS.LOGO_CONTEST) return data.brandStyle;
     return data.typeOfTagline;
   };
 
-  const ucFirstLetter = string =>
-    string.charAt(0).toUpperCase() + string.slice(1);
+  const handleClick = () => goToExtended(data.id);
 
-  const { id, title, contestType, prize, count, goToExtended } = props.data;
+  const { id, title, contestType, prize, count = 0, createdAt } = data;
   return (
-    <div
-      className={styles.contestBoxContainer}
-      onClick={() => props.goToExtended(id)}
-    >
+    <article className={styles.contestBoxContainer}>
       <div className={styles.mainContestInfo}>
-        <div className={styles.titleAndIdContainer}>
-          <span className={styles.title}>{title}</span>
-          <span className={styles.id}>{`(#${id})`}</span>
-        </div>
-        <div className={styles.contestType}>
-          <span>{`${ucFirstLetter(
-            contestType
-          )} / ${getPreferenceContest()}`}</span>
-        </div>
-        <div className={styles.contestType}>
-          <span>
-            This is an Invitation Only Contest and is only open to those
-            Creatives who have achieved a Tier A status.
-          </span>
-        </div>
+        <h2 className={styles.title} onClick={handleClick}>
+          <span>{title}</span>
+        </h2>
+        <h3 className={styles.contestType}>
+          {`${ucFirstLetter(contestType)} / ${getPreferenceContest()}`}
+          <span>{formatDiffDate(createdAt)}</span>
+        </h3>
+        <p className={styles.contestType}>
+          This is an Invitation Only Contest and is only open to those Creatives
+          who have achieved a Tier A status.
+        </p>
         <div className={styles.prizeContainer}>
           <div className={styles.guaranteedContainer}>
-            <div>
-              <img
-                src={`${CONSTANTS.STATIC_IMAGES_PATH}smallCheck.png`}
-                alt='check'
-              />
-            </div>
+            <img
+              src={`${CONSTANTS.STATIC_IMAGES_PATH}smallCheck.png`}
+              alt="check"
+            />
             <span>Guaranteed prize</span>
           </div>
           <div className={styles.prize}>
             <img
-              src={`${CONSTANTS.STATIC_IMAGES_PATH}diamond.png`}
-              alt='diamond'
+              src={`${CONSTANTS.STATIC_IMAGES_PATH}ac-diamond.svg`}
+              alt="diamond"
             />
             <span>{`$${prize}`}</span>
           </div>
@@ -68,19 +48,25 @@ const ContestBox = props => {
         <div className={styles.entriesContainer}>
           <div className={styles.entriesCounter}>
             <img
-              src={`${CONSTANTS.STATIC_IMAGES_PATH}entrieImage.png`}
-              alt='logo'
+              src={`${CONSTANTS.STATIC_IMAGES_PATH}ac-user.svg`}
+              alt="logo"
             />
-            <span>{count}</span>
+            <span>Entries</span>
           </div>
-          <span>Entries</span>
+          <span>{count}</span>
         </div>
         <div className={styles.timeContainer}>
-          <span className={styles.timeContest}>{getTimeStr()}</span>
-          <span>Going</span>
+          <div className={styles.timePosted}>
+            <img
+              src={`${CONSTANTS.STATIC_IMAGES_PATH}ac-time.svg`}
+              alt="logo"
+            />
+            <span>Posted</span>
+          </div>
+          <span className={styles.timeContest}>{formatDiffDate(createdAt)}</span>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

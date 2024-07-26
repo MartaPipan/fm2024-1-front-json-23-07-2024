@@ -16,7 +16,7 @@ const Home = props => {
   const [styleName, setStyle] = useState(styles.headline__static);
   
   useEffect(() => {
-    timeout = setInterval(() => {
+    const timeout = setInterval(() => {
       setIndex(index + 1);
       setStyle(styles.headline__isloading);
     }, 3000);
