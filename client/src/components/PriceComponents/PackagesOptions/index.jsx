@@ -1,5 +1,6 @@
 import React from 'react';
 import packagesData from './data/packagesData.json';
+import YouTubeIframe from '../YoutubeIframe';
 import styles from './PackageOptions.module.sass';
 
 const renderSubItems = (subItems) => (
@@ -42,7 +43,16 @@ const renderPackage = (pkg, index) => (
 );
 
 const renderPackages = () => (
-  packagesData.map((pkg, index) => renderPackage(pkg, index))
+  packagesData.map((pkg, index) => (
+    <div key={index} className={styles.packageContainer}>
+      {renderPackage(pkg, index)}
+      {index === 0 && (
+        <div className={styles.videoContainer}>
+          <YouTubeIframe videoId="BK9RA3ASsB8" start={3} />
+        </div>
+      )}
+    </div>
+  ))
 );
 
 const PackagesOptions = () => {

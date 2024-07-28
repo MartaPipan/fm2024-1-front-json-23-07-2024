@@ -23,12 +23,11 @@ $tooltip-color: #fff
   display: flex
   flex-direction: column
   align-items: start
-  border-radius: 5px
   padding: 40px 25px
   margin: 0 0 24px
   background-color: rgb(255, 255, 255)
   border-radius: 16px
-  max-width: 300px
+  width: 290px
   height: auto
   flex-grow: 1
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
@@ -43,6 +42,7 @@ $tooltip-color: #fff
   
   p
     font-size: 16px
+    line-height: 24px
     color: #25247477
     font-weight: 400
     min-height: 60px
@@ -58,7 +58,6 @@ $tooltip-color: #fff
     font-weight: 600
     background-color: #5a73ed
     width: 100%
-    padding: 5px
     margin: 24px 0
     border: none
     border-radius: 8px
@@ -69,13 +68,12 @@ $tooltip-color: #fff
       transition: transform 0.1s
     &:hover img
       transform: translateX(5px)
-
+      
   &:last-of-type button
     color: #5a73ed
     font-weight: 600
     background-color: #fff
     width: 100%
-    padding: 5px
     margin: 24px 0
     border: none
     border-radius: 8px
@@ -157,7 +155,7 @@ $tooltip-color: #fff
         &:hover .tooltiptext
           visibility: visible
           opacity: 1
-
+      
 .subItems
 
   margin-top: 10px

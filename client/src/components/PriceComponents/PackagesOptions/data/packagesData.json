@@ -39,7 +39,8 @@
       { "text": "Partial Refund Option" }
     ]
   },
-  {
+  { 
+    "best":"best value",
     "image": "./public/staticImages/pricePackageImage/platium.svg",
     "alt": "platium-package",
     "name": "Platinum",

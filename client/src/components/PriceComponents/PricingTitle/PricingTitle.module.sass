@@ -23,8 +23,8 @@ $primary-color: #3498db // Основний колір для кнопок
     line-height: 24px // Висота рядка для параграфа
     color: #25247480 // Колір тексту параграфа з прозорістю
     padding-bottom: 24px // Відступ знизу
-    width: 50% // Ширина параграфа
-    margin: 0 auto // Автоматичні відступи для центрування
+    width: 30% // Ширина параграфа
+   
 
   .buttonsContainer
     display: flex // Використовується flexbox для вирівнювання кнопок
@@ -32,7 +32,7 @@ $primary-color: #3498db // Основний колір для кнопок
     position: static // Відносне позиціонування для контейнера кнопок
     width: 60% // Ширина контейнера кнопок
     overflow: hidden // Приховує переповнення контейнера
-    margin: 50px auto // Верхній і нижній відступи
+    margin: 50px 0 // Верхній і нижній відступи
     box-sizing: border-box // Включає поля та відступи у ширину та висоту контейнера
 
     .scrollButton
@@ -78,7 +78,17 @@ $primary-color: #3498db // Основний колір для кнопок
         transition: background-color 0.3s // Плавний перехід кольору фону
         border-radius: 16px // Радіус закруглення країв кнопок
         white-space: nowrap // Запобігає переносу тексту кнопок на новий рядок
-        
 
-        &:hover
-          background: linear-gradient(271.19deg, #307DF6 0%, #14BBBF 100%), #307FF5
+      .loading
+        background: linear-gradient(271.19deg, #307DF6 0%, #14BBBF 100%), #307FF5
+        cursor: wait
+      .active
+        background: linear-gradient(271.19deg, #307DF6 0%, #14BBBF 100%), #307FF5
+
+    .spinnerContainer
+      display: flex
+      justify-content: center
+      align-items: center
+    
+
+    
