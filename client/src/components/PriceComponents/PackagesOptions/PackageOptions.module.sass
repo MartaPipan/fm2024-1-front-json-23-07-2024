@@ -31,15 +31,15 @@ $tooltip-color: #fff
   height: auto
   flex-grow: 1
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
-  
+
   img
     margin-bottom: 5px
-  
+
   h2
     font-size: 24px
     font-weight: 700
     margin: 0 0 10px
-  
+
   p
     font-size: 16px
     line-height: 24px
@@ -47,7 +47,7 @@ $tooltip-color: #fff
     font-weight: 400
     min-height: 60px
     margin: 0 0 20px
-  
+
   h3
     font-size: 40px
     font-weight: 900
@@ -66,27 +66,24 @@ $tooltip-color: #fff
     img
       margin-left: 2px
       transition: transform 0.1s
+
     &:hover img
       transform: translateX(5px)
-      
-  &:last-of-type button
-    color: #5a73ed
-    font-weight: 600
-    background-color: #fff
-    width: 100%
-    margin: 24px 0
-    border: none
-    border-radius: 8px
-    border: 1px solid #8d9adeb9
-    cursor: pointer
-    transition: transform 0.3s
+
+    &:last-of-type button
+      color: #5a73ed
+      font-weight: 600
+      background-color: #fff
+      border: 1px solid #8d9adeb9
+      transition: transform 0.3s
+
+      img
+        display: none
 
     &:hover
       color: #fff
-      font-weight: 600
       background-color: #5a73ed
-    
-  
+
   ul
     list-style-type: none
     padding: 0
@@ -95,14 +92,14 @@ $tooltip-color: #fff
     display: flex
     flex-direction: column
     box-sizing: border-box
-    
-    li
+
+    .item
       box-sizing: border-box
       font-size: 14px
       line-height: 24px
       font-weight: 400
       color: #686363
-      padding: 16px 0 
+      padding: 16px 0
       display: block
       align-items: start
       width: 100%
@@ -116,71 +113,57 @@ $tooltip-color: #fff
         width: 16px
         height: 16px
 
-      .tooltip
-        cursor: pointer
-        display: flex
-        align-items: center
-        position: relative
-
-        &:hover
-          background-color: #c8cbcc1b
-          border-radius: 8px
-
-        .tooltiptext
-          visibility: hidden
-          width: 300px
-          background-color: $tooltip-color
-          color: #8a8181
-          text-align: center
-          text-size: 8px
-          border: 1px solid #e8e0e0ea
-          border-radius: 15px
-          position: absolute
-          z-index: 1
-          top: 50%
-          left: 50%
-          margin-top: -15px
-          opacity: 0
-          transition: opacity 0.3s
-
-          &:after
-            position: absolute
-            top: 50%
-            left: 0
-            margin-top: -5px
-            border-width: 5px
-            border-style: solid
-            border-color: transparent transparent transparent $tooltip-bg
-        
-        &:hover .tooltiptext
-          visibility: visible
-          opacity: 1
-      
-.subItems
-
-  margin-top: 10px
-  display: flex
-  flex-direction: flex-start
-  align-items: start
-
   .subItem
     position: static
     display: flex
     align-items: center
     width: 100%
-    line-height:24px
+    line-height: 24px
     padding: 16px 0px 20px 16px
-    
     border-bottom: none
+
     &:hover
-      background-color: #f5e8e862
+      background-color: #f8f9fa
       border-radius: 16px
 
     .tooltip
+      cursor: pointer
       display: flex
       align-items: center
+      position: relative
+
+      &:hover
+        background-color: #c8cbcc1b
+        border-radius: 8px
 
       .tooltiptext
-        top: 50%
-        left: 90%
-        margin-top: -50px
+        visibility: hidden
+        width: 250px
+        background-color: #fff
+        color: #252474bc
+        text-align: start
+        font-size: 12px
+        line-height: 18px
+        padding: 10px
+        border: 1px solid #f8f9fa
+        border-radius: 15px
+        position: absolute
+        z-index: 1
+        left: 250px
+        margin-top: -15px
+        opacity: 0
+        transition: opacity 0.3s
+
+        &::after
+          content: ""
+          position: absolute
+          top: 50%
+          left: -30px
+          margin-top: -18px
+          border-width: 18px
+          border-style: solid
+          border-color: transparent #fff transparent transparent
+
+      &:hover .tooltiptext
+        visibility: visible
+        opacity: 1
