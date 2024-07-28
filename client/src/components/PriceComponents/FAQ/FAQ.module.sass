@@ -1,21 +1,54 @@
 .faqs
-  display: flex
-  flex-direction: column
-  align-items: center
-  padding: 20px
-
-.faq
-  border: 1px solid #ddd
-  padding: 20px
-  margin: 10px
-  width: 80%
-  max-width: 600px
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
-  border-radius: 8px
+  display: block
+  box-sizing: border-box
+  position: relative
+  color: #252474
+  font-size: 16px
+  font-weight: 400
+  line-height: 24px
+  text-size-adjust: 100%
+  padding: 100px
+  text-align: center
 
   h2
-    font-size: 1.5em
-    margin-bottom: 10px
+    font-size: 32px
+    font-weight: 700
+    line-height: 48px
 
-  p
-    font-size: 1.2em
+  .faq
+    display: block
+    text-align: center
+    margin: 15px auto
+    width: 80%
+    max-width: 800px
+    border: 1px solid #efeffbd1
+    border-radius: 15px
+    &.open
+      background-color: #efeffb
+    
+
+    h3
+      font-size: 20px
+      color:#19184a
+      font-weight: bolder
+      line-height: 30px  
+      padding: 24px 70px 24px 24px
+      display: flex
+      justify-content: space-between
+      
+
+      .toggleButton
+        color: #0d6efd
+        background: none
+        border: none
+        font-size: 24px
+        cursor: pointer
+        margin-left: 10px
+
+    p
+      font-size: 16px
+      color: #525177
+      font-weight: 400
+      line-height: 24px
+      padding: 0 24px 24px 30px 
+      text-align: start
