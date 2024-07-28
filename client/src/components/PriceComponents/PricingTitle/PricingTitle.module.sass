@@ -1,0 +1,84 @@
+$primary-color: #3498db // Основний колір для кнопок
+
+.pricingTitle
+  background: radial-gradient(circle at center, #f2f9ff, #e6f3ff, #e6edfa, #f2f4f8)
+  display: flex // Використовується flexbox для вирівнювання елементів
+  flex-direction: column // Розташовує дочірні елементи у стовпець
+  align-items: center // Вирівнює дочірні елементи по центру горизонтально
+  justify-content: center // Вирівнює дочірні елементи по центру вертикально
+  background-color: #cddaf876 // Фоновий колір контейнера
+  width: 100% // Ширина контейнера 100%
+  margin: auto // Автоматичні відступи для центрування
+  text-align: center // Вирівнювання тексту по центру
+
+  h1
+    font-size: 32px // Розмір шрифту для заголовка
+    font-weight: 700 // Жирність шрифту для заголовка
+    color: #252474 // Колір тексту заголовка
+    padding-top: 60px // Відступ зверху
+    margin-bottom: 10px // Відступ знизу
+
+  p
+    font-size: 16px // Розмір шрифту для параграфа
+    line-height: 24px // Висота рядка для параграфа
+    color: #25247480 // Колір тексту параграфа з прозорістю
+    padding-bottom: 24px // Відступ знизу
+    width: 50% // Ширина параграфа
+    margin: 0 auto // Автоматичні відступи для центрування
+
+  .buttonsContainer
+    display: flex // Використовується flexbox для вирівнювання кнопок
+    align-items: center // Вирівнює кнопки по центру вертикально
+    position: static // Відносне позиціонування для контейнера кнопок
+    width: 60% // Ширина контейнера кнопок
+    overflow: hidden // Приховує переповнення контейнера
+    margin: 50px auto // Верхній і нижній відступи
+    box-sizing: border-box // Включає поля та відступи у ширину та висоту контейнера
+
+    .scrollButton
+      top: 50% // Позиціонування по вертикалі на 50% від висоти контейнера
+      background-color: transparent // Прозорий фон кнопок прокручування
+      border: none // Без рамки
+      cursor: pointer // Курсор у вигляді руки при наведенні
+      width: 40px // Ширина кнопок прокручування
+      height: 40px // Висота кнопок прокручування
+
+      img
+        width: 100% // Ширина зображення всередині кнопок прокручування
+        height: 100% // Висота зображення всередині кнопок прокручування
+
+    .scrollLeft
+      left: 0 // Позиціонування кнопки прокручування ліворуч
+
+    .scrollRight
+      right: 0 // Позиціонування кнопки прокручування праворуч
+
+    .buttons
+      border-radius: 16px // Радіус закруглення країв контейнера
+      display: flex // Використовується flexbox для розміщення кнопок
+      flex-wrap: nowrap // Кнопки не переносяться на новий рядок
+      background-color: #fff // Білий фон контейнера кнопок
+      overflow-x: auto // Прокрутка по горизонталі
+      scroll-behavior: smooth // Плавна прокрутка
+      width: 100% // Ширина контейнера кнопок
+      box-sizing: border-box // Включає поля та відступи у ширину та висоту контейнера
+
+      &::-webkit-scrollbar
+        display: none // Приховує горизонтальну смугу прокручування
+
+      .pricingButton
+        background-color: transparent // Прозорий колір фону кнопок
+        color: #525252 // Колір тексту кнопок
+        background-color: linear-gradient #271.19 #48125246 0% #20187191 100% none
+        border: none // Без рамки
+        padding: 13px 20px // Відступи всередині кнопок
+        font-size: 16px // Розмір шрифту кнопок
+        line-height: 24px
+        cursor: pointer // Курсор у вигляді руки при наведенні
+        transition: background-color 0.3s // Плавний перехід кольору фону
+        border-radius: 16px // Радіус закруглення країв кнопок
+        white-space: nowrap // Запобігає переносу тексту кнопок на новий рядок
+        
+
+        &:hover
+          background: linear-gradient(271.19deg, #307DF6 0%, #14BBBF 100%), #307FF5

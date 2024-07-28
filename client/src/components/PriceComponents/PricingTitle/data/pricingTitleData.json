@@ -1,0 +1,18 @@
+{
+  "title": "Select a Pricing Package",
+  "description": "All packages include the award amount that is payable to the winner at the end of the contest. Select a contest package that fits your budget.",
+  "buttons": [
+    {"text": "Name"},
+    {"text": "Logo"},
+    {"text": "Tagline"},
+    {"text": "Name + Logo"},
+    {"text": "Name + Tagline"},
+    {"text": "Name, Tagline + Logo"},
+    {"text": "Name, Logo + Business Cards"},
+    {"text": "Logo + Business Cards"},
+    {"text": "Logo, Business Cards + Stationery"},
+    {"text": "Logo + Tagline"},
+    {"text": "Business Cards"},
+    {"text": "Stationery"}
+  ]
+}

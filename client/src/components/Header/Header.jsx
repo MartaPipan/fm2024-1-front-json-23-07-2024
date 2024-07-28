@@ -55,7 +55,7 @@ class Header extends React.Component {
               </li>
               <li>
                 <Link
-                  to="http:/www.google.com"
+                  to="http://www.google.com"
                   style={{ textDecoration: 'none' }}
                 >
                   <span>Messages</span>
@@ -63,7 +63,7 @@ class Header extends React.Component {
               </li>
               <li>
                 <Link
-                  to="http:/www.google.com"
+                  to="http://www.google.com"
                   style={{ textDecoration: 'none' }}
                 >
                   <span>Affiliate Dashboard</span>
@@ -258,6 +258,11 @@ class Header extends React.Component {
                       <a href="http://www.google.com">ALL ARTICLES</a>
                     </li>
                   </ul>
+                </li>
+                <li>
+                  <Link to="/price" style={{ textDecoration: 'none' }}>  {/* Add link to PricePage */}
+                    <span>PRICING</span>
+                  </Link>
                 </li>
               </ul>
             </div>
