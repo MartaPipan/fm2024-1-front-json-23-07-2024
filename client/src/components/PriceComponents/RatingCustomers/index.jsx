@@ -1,53 +1,35 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState } from 'react';
 import ratingCustomersData from './data/ratingCustomersData.json';
 import FiveStars from './FiveStars';
 import styles from './RatingCustomers.module.sass';
 
+
+const renderComments = (comments, currentIndex) => {
+  return [0, 1, 2].map(i => {
+    const index = (currentIndex + i) % comments.length;
+    const { rating, comment, author } = comments[index];
+    return (
+      <div className={styles.comment} key={index}>
+        <FiveStars rating={rating} />
+        <p>{comment}</p>
+        <h3>{author}</h3>
+      </div>
+    );
+  });
+};
+
+
 const RatingCustomers = () => {
+  const comments = ratingCustomersData.comments;
   const [currentIndex, setCurrentIndex] = useState(0);
-  const scrollRef = useRef(null);
 
-  // Função para rolar para o índice especificado
-  const scrollToIndex = useCallback((index) => {
-    if (scrollRef.current) {
-      const itemWidth = scrollRef.current.scrollWidth / ratingCustomersData.comments.length;
-      scrollRef.current.scrollTo({
-        left: itemWidth * index,
-        behavior: 'smooth',
-      });
-    }
-  }, []);
-
-  // Função para lidar com o clique no botão "anterior"
   const handlePrevClick = () => {
-    setCurrentIndex((prevIndex) => {
-      const newIndex = prevIndex === 0
-        ? ratingCustomersData.comments.length - 1
-        : prevIndex - 1;
-      scrollToIndex(newIndex);
-      return newIndex;
-    });
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + comments.length) % comments.length);
   };
 
-  // Função para lidar com o clique no botão "próximo"
   const handleNextClick = () => {
-    setCurrentIndex((prevIndex) => {
-      const newIndex = prevIndex === ratingCustomersData.comments.length - 1
-        ? 0
-        : prevIndex + 1;
-      scrollToIndex(newIndex);
-      return newIndex;
-    });
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % comments.length);
   };
-
-  // Função para renderizar cada comentário
-  const renderComment = (review, index) => (
-    <div className={styles.comment} key={index}>
-      <FiveStars rating={review.rating} />
-      <p>{review.comment}</p>
-      <h3>{review.author}</h3>
-    </div>
-  );
 
   return (
     <section className={styles.customers}>
@@ -74,9 +56,9 @@ const RatingCustomers = () => {
           onClick={handleNextClick}
         />
       </div>
-      <section className={styles.ratings} ref={scrollRef}>
-        {ratingCustomersData.comments.map(renderComment)}
-      </section>
+      <div className={styles.ratings}>
+        {renderComments(comments, currentIndex)}
+      </div>
     </section>
   );
 };

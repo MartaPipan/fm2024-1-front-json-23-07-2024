@@ -4,7 +4,7 @@ import styles from './FAQ.module.sass';
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
-  
+
   const handleToggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
@@ -17,14 +17,9 @@ const FAQ = () => {
         key={index}
         className={`${styles.faq} ${isOpen ? styles.open : ''}`}
       >
-        <h3>
+        <h3 className={styles.header} onClick={() => handleToggle(index)}>
           {faq.question}
-          <button
-            onClick={() => handleToggle(index)}
-            className={styles.toggleButton}
-          >
-            {isOpen ? 'x' : '+'}
-          </button>
+          <button className={styles.toggleButton}>{isOpen ? 'x' : '+'}</button>
         </h3>
         {isOpen && <p>{faq.answer}</p>}
       </section>

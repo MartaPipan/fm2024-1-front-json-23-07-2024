@@ -3,6 +3,7 @@ import PricingTitle from './PricingTitle';
 import FAQ from './FAQ';
 import RatingCustomers from './RatingCustomers';
 import PackageOptions from './PackagesOptions';
+import Carousel from './Carousel';
 
 
 
@@ -12,6 +13,7 @@ const PriceComponent = () => (
     <PackageOptions />
     <RatingCustomers/>
     <FAQ />
+    <Carousel/>
   </div>
 );
 
