@@ -1,0 +1,82 @@
+.customers
+  display: block
+  box-sizing: border-box
+  background-color: #b0b0b01a
+  .customers
+  display: block
+  box-sizing: border-box
+  background-color: #b0b0b01a
+  padding: 80px
+
+.header
+  display: flex
+  box-sizing: border-box
+  width: 100%
+  justify-content: start
+  margin: auto
+  color: #343434
+  font-size: 28px
+  line-height: 40px
+
+div input
+  margin: auto
+
+.headerStar
+  width: 24px
+  height: 24px
+  background-color: #f17c0fa5
+  padding: 8px
+  border-radius: 50px
+  margin-right: 12px
+
+.review
+  font-weight: 500
+  margin-right: 10px
+
+
+.scroll
+  justify-content: flex-end
+  margin-bottom: 20px
+  cursor: pointer
+  
+.scrollLeft
+  margin-right: 0
+.scrollRight
+  margin-left: 0
+
+.ratings
+  display: flex
+  padding: 0px 0 20px 0
+  overflow-x: auto
+  scroll-snap-type: x mandatory
+  scroll-behavior: smooth
+
+  & > .comment
+    position: relative
+    flex: 0 0 30%
+    scroll-snap-align: start
+    box-sizing: border-box
+    max-width: 478px
+    max-height: 279px
+    padding: 32px
+    margin-right: 24px
+    border-radius: 24px
+    background: #fff
+    font-size: 16px
+    line-height: 24px
+    box-shadow: 0 8px 10px 0 rgb(48 127 245 / .08)  // Adiciona a sombra ao contêiner
+
+    p
+      color: #5e5c9b
+      margin: 0 0 50px 0
+
+    h3
+      position: absolute
+      bottom: 0
+      color: #19184a
+      font-weight: 700
+      margin-bottom: 32px
+
+/* Esconde a barra de rolagem horizontal */
+::-webkit-scrollbar
+  display: none

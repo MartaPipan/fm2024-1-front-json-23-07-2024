@@ -10,8 +10,8 @@ const PriceComponent = () => (
   <div>
     <PricingTitle />
     <PackageOptions />
+    <RatingCustomers/>
     <FAQ />
-    <RatingCustomers />
   </div>
 );
 
