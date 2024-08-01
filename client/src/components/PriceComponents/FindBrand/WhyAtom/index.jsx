@@ -13,8 +13,8 @@ const WhyAtom = () => {
     const renderSubsections = (subsections) => {
         return subsections.map((sub, idx) => (
             <div key={idx}>
-                <span className={styles.spanBefore}></span>
-                <h4>{sub.heading}</h4>
+                <span> </span>
+                <h5>{sub.heading}</h5>
                 <p>{sub.content}</p>
             </div>
         ));
