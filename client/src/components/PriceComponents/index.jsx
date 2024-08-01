@@ -3,8 +3,7 @@ import PricingTitle from './PricingTitle';
 import FAQ from './FAQ';
 import RatingCustomers from './RatingCustomers';
 import PackageOptions from './PackagesOptions';
-import Carousel from './Carousel';
-
+import FindBrand from "./FindBrand"
 
 
 const PriceComponent = () => (
@@ -13,7 +12,7 @@ const PriceComponent = () => (
     <PackageOptions />
     <RatingCustomers/>
     <FAQ />
-    <Carousel/>
+    <FindBrand/>
   </div>
 );
 

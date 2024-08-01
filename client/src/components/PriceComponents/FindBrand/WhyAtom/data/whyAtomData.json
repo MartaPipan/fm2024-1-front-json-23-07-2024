@@ -1,0 +1,19 @@
+[
+  {  
+    "title": "Why Atom.com?",
+    "subsections": [
+      { 
+        "heading": "Disrupting The Traditional Agency Model", 
+        "content": "Atom.com is reimagining how naming is done, providing fast, affordable, high-quality, soup-to-nuts solutions unlike anyone else." 
+      },
+      { 
+        "heading": "Satisfaction Guarantee", 
+        "content": "We have policies in place to ensure that you are satisfied with your experience." 
+      }
+    ],
+    "buttons": [
+      { "text": "Contest Policies", "link": "./articles/115621-refund-policy" },
+      { "text": "Marketplace Policies", "link": "./articles/2131996-domain-marketplace-terms-conditions-for-buyers" }
+    ]
+  }
+]

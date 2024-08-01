@@ -1,0 +1,74 @@
+.containerRight
+  display: block
+  flex: 0 0 20% // Garante que o container ocupe 35% do espaço disponível
+  text-align: left
+  color: #19184a
+  background-color: #fff
+  border-radius: 40px
+  padding: 40px
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+
+  @media (max-width: 768px) // Ajuste o breakpoint conforme necessário
+    width: 75%
+    margin-top: 40px // Adiciona espaçamento entre os containers quando empilhados
+
+.sectionRight
+  display: block
+  box-sizing: border-box
+  max-width: 550px
+  margin: 0 auto
+  text-align: center
+  width: 100%
+
+h3
+  font-size: 32px
+  font-weight: 700
+  line-height: 42px
+  margin: 0 0 20px 0
+
+h4
+  font-size: 18px
+  font-weight: 700
+  line-height: 24px
+  margin: 0 0 10px 0
+  position: relative
+
+  &::before
+    content: ''
+    display: block
+    position: absolute
+    left: -40px
+    top: 2px
+    width: 6px
+    height: 24px
+    background: #637cf7
+    border-radius: 0 8px 8px 0
+
+p
+  font-size: 16px
+  line-height: 24px
+  color: #343434
+  margin: 0 0 20px 0
+
+.buttonsRight
+  display: flex
+  flex-direction: row
+  box-sizing: border-box
+  justify-content: start
+  font-size: 16px
+
+  button
+    padding: 8px 16px
+    font-size: 14px
+    line-height: 24px
+    color: #637cf7
+    display: inline-flex
+    align-items: center
+    font-weight: 400
+    justify-content: center
+    border-radius: 20px
+    border: none
+    background-color: #f2f2fbd3
+    position: relative
+    pointer: default
+    margin: 0 12px 12px 0

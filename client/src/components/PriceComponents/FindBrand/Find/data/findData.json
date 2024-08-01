@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Find The Perfect Brand Name Today!",
+    "buttons": [
+      { 
+        "text": "Explore Names for Sale", 
+        "link": "./articles/115621-refund-policy",
+        "image": "./public/staticImages/next-white.svg",
+        "alt": "next"
+      },
+      { 
+        "text": "or" 
+      },
+      { 
+        "text": "I want a Custom Name", 
+        "link": "./articles/2131996-domain-marketplace-terms-conditions-for-buyers" 
+      }
+    ]
+  }
+]
