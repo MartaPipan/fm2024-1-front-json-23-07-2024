@@ -1,0 +1,36 @@
+{
+  "component": "SearchNames",
+  "structure": {
+    "searchBar": {
+      "search": [
+        {
+          "link": "./articles/115621-refund-policy",
+          "image": "./public/staticImages/pricePackageImage/icon-search.svg",
+          "alt": "search"
+        }
+      ],
+      "arrow": [
+        {
+          "link": "./articles/2131996-domain-marketplace-terms-conditions-for-buyers",
+          "image": "./public/staticImages/pricePackageImage/next-circle.svg",
+          "alt": "next"
+        }
+      ],
+      "button": {
+        "text": "Search Over 200,000+ Premium Names"
+      }
+    },
+    "popularSearch": {
+      "text": "Popular searches",
+      "buttons": [
+        { "text": "Tech", "link": "#" },
+        { "text": "Clothing", "link": "#" },
+        { "text": "Finance", "link": "#" },
+        { "text": "Real Estate", "link": "#" },
+        { "text": "Crypto", "link": "#" },
+        { "text": "Short", "link": "#" },
+        { "text": "One Word", "link": "#" }
+      ]
+    }
+  }
+}

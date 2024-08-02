@@ -4,6 +4,7 @@ import FAQ from './FAQ';
 import RatingCustomers from './RatingCustomers';
 import PackageOptions from './PackagesOptions';
 import FindBrand from "./FindBrand"
+import SearchNames from './SearchNames';
 
 
 const PriceComponent = () => (
@@ -12,7 +13,8 @@ const PriceComponent = () => (
     <PackageOptions />
     <RatingCustomers/>
     <FAQ />
-    <FindBrand/>
+    <FindBrand />
+    <SearchNames/>
   </div>
 );
 
