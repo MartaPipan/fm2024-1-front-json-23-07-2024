@@ -3,6 +3,24 @@ import ratingCustomersData from './data/ratingCustomersData.json';
 import FiveStars from './FiveStars';
 import styles from './RatingCustomers.module.sass';
 
+const NavigationButtons = ({ handlePrevClick, handleNextClick }) => (
+  <>
+    <input
+      type="image"
+      src="./public/staticImages/prev-blue.svg"
+      alt="prev"
+      className={`${styles.scroll} ${styles.scrollLeft}`}
+      onClick={handlePrevClick}
+    />
+    <input
+      type="image"
+      src="./public/staticImages/next-blue.svg"
+      alt="next"
+      className={`${styles.scroll} ${styles.scrollRight}`}
+      onClick={handleNextClick}
+    />
+  </>
+);
 
 const renderComments = (comments, currentIndex) => {
   return [0, 1, 2].map(i => {
@@ -11,13 +29,12 @@ const renderComments = (comments, currentIndex) => {
     return (
       <div className={styles.comment} key={index}>
         <FiveStars rating={rating} />
-        <p>{comment}</p>
-        <h3>{author}</h3>
+        <p className={styles.commentText}>{comment}</p>
+        <h4 className={styles.author}>{author}</h4>
       </div>
     );
   });
 };
-
 
 const RatingCustomers = () => {
   const comments = ratingCustomersData.comments;
@@ -33,7 +50,7 @@ const RatingCustomers = () => {
 
   return (
     <section className={styles.customers}>
-      <div className={styles.header}>
+      <div className={styles.headerRating}>
         <img
           src="./public/staticImages/pricePackageImage/star-white.svg"
           alt="star"
@@ -41,26 +58,19 @@ const RatingCustomers = () => {
         />
         <span className={styles.review}>{ratingCustomersData.review}</span>
         <span className={styles.from}>{ratingCustomersData.from}</span>
-        <input
-          type="image"
-          src="./public/staticImages/prev-blue.svg"
-          alt="prev"
-          className={`${styles.scroll} ${styles.scrollLeft}`}
-          onClick={handlePrevClick}
-        />
-        <input
-          type="image"
-          src="./public/staticImages/next-blue.svg"
-          alt="next"
-          className={`${styles.scroll} ${styles.scrollRight}`}
-          onClick={handleNextClick}
-        />
+        <div className={styles.navButtonsDesktop}>
+          <NavigationButtons handlePrevClick={handlePrevClick} handleNextClick={handleNextClick} />
+        </div>
       </div>
       <div className={styles.ratings}>
         {renderComments(comments, currentIndex)}
+      </div>
+      <div className={styles.navButtonsMobile}>
+        <NavigationButtons handlePrevClick={handlePrevClick} handleNextClick={handleNextClick} />
       </div>
     </section>
   );
 };
 
 export default RatingCustomers;
+

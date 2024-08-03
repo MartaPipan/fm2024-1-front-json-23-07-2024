@@ -1,41 +1,46 @@
 .faqs
-  display: block
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
   box-sizing: border-box
+  width: 100%
+  max-width: 830px
   position: relative
   font-size: 16px
-  text-size-adjust: 100%
   padding: 100px 0
+  margin: auto
   text-align: center
 
   h2
     font-size: 32px
     font-weight: 700
     line-height: 48px
-    color:#343434
+    color: #343434
 
   .faq
     display: block
     text-align: center
     margin: 15px auto
-    width: 80%
+    width: 100%
     max-width: 800px
     border: 1px solid #efeffbd1
     border-radius: 15px
+
     &.open
       background-color: #efeffb
-    
 
     .header
       font-size: 20px
-      color:#19184a
+      color: #19184a
       font-weight: bolder
-      line-height: 30px  
-      padding: 24px 70px 24px 24px
+      line-height: 30px
+      padding: 24px 30px 24px 24px
+      margin: 0
       display: flex
       justify-content: space-between
       align-items: center
       cursor: pointer
-      
 
       .toggleButton
         color: #0d6efd
@@ -49,7 +54,36 @@
       font-size: 16px
       font-weight: 400
       color: #525177
-      font-weight: 400
       line-height: 24px
-      padding: 0 24px 24px 30px 
+      padding: 0 24px 24px 30px
       text-align: start
+
+@media (max-width: 991px)
+  .faqs
+    padding: 60px 0
+
+    h2
+      font-size: 24px
+
+    .faq
+      width: 100%
+      margin: 16px auto
+
+      .header
+        font-size: 18px
+
+@media (max-width: 768px)
+  .faqs
+    padding: 18px 15px
+    margin: auto
+
+    h2
+      font-size: 24px
+
+    .faq
+      width: 100%
+      margin: 16px auto
+
+      .header
+        font-size: 16px
+        text-align: left

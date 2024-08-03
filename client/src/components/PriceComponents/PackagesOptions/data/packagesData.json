@@ -1,7 +1,7 @@
 [
   {
     "image": "./public/staticImages/pricePackageImage/bronse.svg",
-    "alt":"bronze-package",
+    "alt": "bronze-package",
     "name": "Bronze",
     "title": "Branding on a budget",
     "price": "$299",
@@ -14,7 +14,7 @@
   },
   {
     "image": "./public/staticImages/pricePackageImage/gold.svg",
-    "alt":"gold-package",
+    "alt": "gold-package",
     "name": "Gold",
     "title": "Increase participation and basic brand validation",
     "price": "$449",
@@ -39,8 +39,8 @@
       { "text": "Partial Refund Option" }
     ]
   },
-  { 
-    "best":"best value",
+  {
+    "best": "best value",
     "image": "./public/staticImages/pricePackageImage/platium.svg",
     "alt": "platium-package",
     "name": "Platinum",
@@ -51,11 +51,16 @@
     "items": [
       { "text": "Prize to Winner - $300 (Included)" },
       {
-        "text": "Validation Services & Upgrades ($979 value)",
+        "text": "Validation Services & Upgrades ($644 value)",
         "subItems": [
           {
-            "text": "Audience Testing (Up to 6 Names) ",
-            "link":"View Sample Report",
+            "text": "Audience Testing (Up to 5 Logos) ",
+            "link": [
+              {
+                "href": "https://www.atom.com/assets/nimages/NewAudienceTestingReport.pdf"
+              },
+              { "view": "View Sample Report" }
+            ],
             "comment": "Require creatives to agree to a Non Disclosure Agreement before participating in your contest. Your contest details will also be hidden from search engines"
           },
           {
@@ -81,12 +86,13 @@
   },
   {
     "image": "./public/staticImages/pricePackageImage/managed.svg",
-    "alt":"managed-package",
+    "alt": "managed-package",
     "name": "Managed",
     "title": "A full agency experience without the agency price tag",
     "price": "$1499",
     "save": "save $250",
     "button": "View Managed Plans",
+
     "items": [
       {
         "text": "Receive optimum results from your Naming Contest by launching a Managed Contest Package and working one-on-one with an experienced Atom Branding Consultant."
@@ -94,7 +100,15 @@
       {
         "text": "With significantly more validation services available, professional brief creation, and daily management of your contest by your Branding Expert, you'll receive an enhanced branding experience to closeout your branding project."
       },
-      { "text": "Learn More about Managed Contest" }
+
+      {
+        "link": [
+          {
+            "href": "https://www.atom.com/managed-contests?title=managed_contest"
+          },
+          { "view": "Learn More about Managed Contest" }
+        ]
+      }
     ]
   }
 ]

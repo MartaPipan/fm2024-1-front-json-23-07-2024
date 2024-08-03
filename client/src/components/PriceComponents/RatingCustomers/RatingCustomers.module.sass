@@ -4,11 +4,8 @@
   position: relative
   background-color: #b0b0b01a
   padding: 80px
-  height: 525px
 
-
-
-.header
+.headerRating
   display: flex
   box-sizing: border-box
   width: 100%
@@ -44,31 +41,51 @@
 
 .ratings
   display: flex
-  padding: 0px 0 20px 0
-  align-items: flex-start
- 
+  width: 100%
+  transition: transform 0.5s ease
 
 .comment
-  position: relative
-  flex: 0 1 auto  
-  width: 414px
+  flex: 0 0 30%// Ajusta a largura para 1 comentário visível
+  width: 100% // Ajusta a largura para 1 comentário visível
   padding: 32px
   margin-right: 24px
   border-radius: 24px
   background: #fff
   font-size: 16px
   line-height: 24px
-  box-shadow: 0 8px 10px 0 rgba(48, 127, 245, 0.08)  // Adiciona a sombra ao contêiner
-  
-  
+  box-shadow: 0 8px 10px 0 rgba(48, 127, 245, 0.08)
 
-  p
-    color: #5e5c9b
-    margin: 0 0 50px 0
-    /* Certifique-se de que o parágrafo se ajuste ao tamanho do contêiner */
+.commentText
+  color: #5e5c9b
+  margin: 0 0 50px 0
 
-  h3
+.author 
+  color: #19184a
+  font-size: 16px
+  font-weight: 700
+  margin-bottom: 8px
+
+@media(max-width: 991px)
+  .headerRating
+    line-height: 20px
+
+    .headerStar
+      width: 20px
+      height: 20px  
     
-    color: #19184a
-    font-weight: 700
-    margin-bottom: 8px
+    span
+      font-size: 20px
+
+    .topInputs
+      display: none
+
+    .bottomInputs
+      display: flex
+      justify-content: center
+      margin-top: 20px
+
+  .comment
+    flex: 0 0 300px // Ajusta a largura para 300px
+    width: 300px // Ajusta a largura para 300px
+    padding: 24px
+

@@ -1,19 +1,25 @@
 .containerLeft
   display: block
-  flex: 0 0 40% // Garante que o container ocupe 50% do espaço disponível
+  width: 50% 
   text-align: center
+  justify-content: center
   border-radius: 40px
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
   background: linear-gradient(45deg, #5a73ed 0, #3d57d5 100%)
   padding: 100px 20px
+  margin: auto
   color: #fff
-  font-size: 24px
-  font-weight: 600
 
-  @media (max-width: 768px) // Ajuste o breakpoint conforme necessário
-    width: 85%
+  @media (max-width:1280px)
+    width: 73%
+
+  @media (max-width: 991px)
+    padding: 30px 20px
     flex-direction: column
-    padding: 50px 10px
+    align-items: center
+
+  @media (max-width: 768px) 
+    width: 88%  
   
 .sectionLeft
   display: block
@@ -23,18 +29,23 @@
   text-align: center
   width: 100%
 
+    
   h2
-    box-sizing: border-box
-    text-align: center
     font-size: 48px
     line-height: 62px
     font-weight: 700
     margin: 0 0 40px 0
 
-    @media (max-width: 768px) // Ajuste o breakpoint conforme necessário
-      font-size: 24px
-      line-height: 24px
+    @media ( max-width:991px )
+      font-size: 30px
+      line-height: 30px
 
+    @media (max-width: 768px) 
+      font-size: 24px
+      line-height: 28px
+    
+
+  
 .buttonsLeft
   display: flex
   box-sizing: border-box
@@ -44,7 +55,7 @@
   flex-wrap: wrap
   width: 100%
 
-  @media (max-width: 768px) // Ajuste o breakpoint conforme necessário
+  @media (max-width: 768px) 
     flex-direction: column
     font-size: 14px
     width: 100%
@@ -83,6 +94,9 @@
       transform: translateX(5px)
 
   span
-    margin: 20px  5px 5px 5px
-    @media (max-width: 768px) // Ajuste o breakpoint 
-      margin: 5px
+    margin: 20px 5px 5px 5px
+    @media ( max-width:991px )
+      margin: 10px 5px 5px 5px
+
+
+      

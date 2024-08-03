@@ -4,12 +4,13 @@ import WhyAtom from './WhyAtom';
 import styles from './FindBrand.module.sass';
 
 const FindBrand = () => {
-    return (
-        <div className={styles.container}>
-            <Find/>
-            <WhyAtom />
-        </div>
-    );
+  return (
+      <section className={styles.container}>
+        <Find />
+        <WhyAtom />
+      </section>
+  
+  );
 };
 
 export default FindBrand;

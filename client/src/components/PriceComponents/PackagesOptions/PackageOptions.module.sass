@@ -31,6 +31,7 @@ $tooltip-color: #fff
   height: auto
   flex-grow: 1
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+  position: relative // Required for positioning the label
 
   img
     margin-bottom: 5px
@@ -114,25 +115,27 @@ $tooltip-color: #fff
         height: 16px
 
   .subItem
-    position: static
+    
+    flex-wrap: wrap
+    position: relative
     display: flex
     align-items: center
     width: 100%
-    line-height: 24px
-    padding: 16px 0px 20px 16px
+    font-size: 14px
+    font-weight: 400
+    line-height: 21px
+    padding: 10px 8px 8px 32px
     border-bottom: none
 
     &:hover
       background-color: #f5efef9a
       border-radius: 8px
-     
 
     .tooltip
       cursor: pointer
       display: flex
       align-items: center
       position: relative
-
 
       .tooltiptext
         visibility: hidden
@@ -160,8 +163,25 @@ $tooltip-color: #fff
           margin-top: -18px
           border-width: 18px
           border-style: solid
-          border-color: transparent#fff transparent transparent
+          border-color: transparent #fff transparent transparent
 
       &:hover .tooltiptext
         visibility: visible
         opacity: 1
+
+  // Add styles for "Best Value" label
+  .bestValue
+    position: absolute
+    top: -15px
+    left: 50%
+    transform: translateX(-50%)
+    background-color: #62c67a
+    color: #fff
+    padding: 9px 20px
+    border-radius: 30px
+    font-weight:700
+    font-size: 12px
+    text-align: center
+    z-index: 10
+    border: 2px solid $secondary-color
+    box-sizing: border-box

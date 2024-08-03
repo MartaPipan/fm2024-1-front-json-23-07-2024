@@ -1,6 +1,6 @@
 .containerRight
   display: block
-  flex: 0 0 20% // Garante que o container ocupe 35% do espaço disponível
+  width: 28% // Garante que o container ocupe 35% do espaço disponível
   text-align: left
   color: #19184a
   background-color: #fff
@@ -8,9 +8,11 @@
   padding: 40px
   box-shadow: 0 16px 40px rgb(48 127 245 / .08)
 
-  @media (max-width: 768px) // Ajuste o breakpoint conforme necessário
-    width: 75%
-    margin-top: 40px // Adiciona espaçamento entre os containers quando empilhados
+  @media (max-width: 1280px) 
+    width: 70%
+  @media (max-width: 768px) 
+    width: 79%
+
 
 .sectionRight
   display: block
@@ -26,7 +28,7 @@ h3
   line-height: 42px
   margin: 0 0 20px 0
 
-h5
+h6
   font-size: 18px
   font-weight: 700
   line-height: 24px

@@ -14,7 +14,7 @@ const WhyAtom = () => {
         return subsections.map((sub, idx) => (
             <div key={idx}>
                 <span> </span>
-                <h5>{sub.heading}</h5>
+                <h6>{sub.heading}</h6>
                 <p>{sub.content}</p>
             </div>
         ));
