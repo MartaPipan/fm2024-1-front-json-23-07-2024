@@ -1,0 +1,116 @@
+.customers
+  display: block
+  box-sizing: border-box
+  position: relative
+  background-color: #b0b0b01a
+  padding: 80px
+
+.headerRating
+  display: flex
+  box-sizing: border-box
+  width: 100%
+  justify-content: space-around
+  margin: auto
+  color: #343434
+  font-size: 28px
+  line-height: 40px
+
+.headerStar
+  width: 24px
+  height: 24px
+  background-color: #f17c0fa5
+  padding: 8px
+  border-radius: 50px
+  margin-right: 12px
+
+.review
+  font-weight: 500
+  margin-right: 10px
+
+.scroll
+  margin: auto
+  justify-content: flex-end
+  margin-bottom: 20px
+  cursor: pointer
+
+.scrollLeft
+  margin-right: 0
+
+.scrollRight
+  margin-left: 0
+
+.ratings
+  display: flex
+  width: 100%
+  overflow: hidden
+  position: relative
+
+.commentWrapper
+  display: flex
+  transition: transform 0.5s ease
+  width: 100% // Додати ширину для контейнера коментарів
+
+.comment
+  flex: 0 0 30% // Задає ширину коментаря для 3 коментарів на ряд
+  width: 30% // Фіксована ширина коментаря
+  padding: 32px
+  margin-right: 24px
+  border-radius: 24px
+  background: #fff
+  font-size: 16px
+  line-height: 24px
+  box-shadow: 0 8px 10px 0 rgba(48, 127, 245, 0.08)
+  box-sizing: border-box
+
+.commentText
+  color: #5e5c9b
+  margin: 0 0 50px 0
+
+.author 
+  color: #19184a
+  font-size: 16px
+  font-weight: 700
+  margin-bottom: 8px
+
+@media(max-width: 991px)
+  .headerRating
+    line-height: 20px
+
+    .headerStar
+      width: 20px
+      height: 20px  
+
+    span
+      font-size: 20px
+
+    .topInputs
+      display: none
+
+    .bottomInputs
+      display: flex
+      justify-content: center
+      margin-top: 20px
+
+  .comment
+    flex: 0 0 300px // Задає ширину коментаря для мобільних пристроїв
+    width: 300px
+    padding: 24px
+
+// Анімація для переходів
+.enter
+  opacity: 0
+  transform: translateX(100%)
+
+.enterActive
+  opacity: 1
+  transform: translateX(0)
+  transition: opacity 500ms, transform 500ms
+
+.exit
+  opacity: 1
+  transform: translateX(0)
+
+.exitActive
+  opacity: 0
+  transform: translateX(-100%)
+  transition: opacity 500ms, transform 500ms
