@@ -1,7 +1,7 @@
-import React, { useMemo } from 'react'
-import packagesData from './data/packagesData.json'
-import YouTubeIframe from '../YoutubeIframe'
-import styles from './PackageOptions.module.sass'
+import React, { useMemo } from 'react';
+import packagesData from './data/packagesData.json';
+import YouTubeIframe from '../YoutubeIframe';
+import styles from './PackageOptions.module.sass';
 
 // Função para gerar subitens
 const useSubItems = (subItems) => {
@@ -16,7 +16,7 @@ const useSubItems = (subItems) => {
           </span>
           {subItem.link && (
             <div className={styles.linkContainer}>
-              <a href={subItem.link[0].href} target="_blank" rel="noopener noreferrer">
+              <a href={subItem.link[0].href} target="_blank" rel="noopener noreferrer" className={styles.link}>
                 {subItem.link[1].view}
               </a>
             </div>
@@ -24,8 +24,8 @@ const useSubItems = (subItems) => {
         </li>
       ))}
     </ul>
-  ), [subItems])
-}
+  ), [subItems]);
+};
 
 // Função para gerar itens
 const useItems = (items) => {
@@ -36,70 +36,77 @@ const useItems = (items) => {
           <img src="./public/staticImages/pricePackageImage/tick.png" alt="tick" />
           {item.text}
           {item.subItems && useSubItems(item.subItems)}
-          {item.link && (
-            <div className={styles.linkContainer}>
-              <a href={item.link[0].href} target="_blank" rel="noopener noreferrer">
-                {item.link[1].view}
-              </a>
-            </div>
-          )}
         </li>
       ))}
     </ul>
-  ), [items])
-}
+  ), [items]);
+};
+
+// Função para renderizar o link
+const useLink = (link) => {
+  return (
+    <div className={styles.linkContainer}>
+      <a href={link[0].href} target="_blank" rel="noopener noreferrer" className={styles.link}>
+        {link[1].view}
+      </a>
+    </div>
+  );
+};
 
 // Função para obter a classe do pacote com base no nome
 const usePackageClass = (name) => {
-  return useMemo(() => styles[name.toLowerCase()], [name])
-}
+  return useMemo(() => styles[name.toLowerCase()], [name]);
+};
+
 
 // Função para renderizar um pacote
 const useRenderPackage = (pkg, index) => {
-  const packageClass = usePackageClass(pkg.name)
-  const items = useItems(pkg.items)
+  const packageClass = usePackageClass(pkg.name);
+  const items = useItems(pkg.items);
+  const link = pkg.link && useLink(pkg.link);
+  
   return (
-    <div key={index} className={`${styles.package} ${packageClass}`}>
+    <section key={index} className={styles.package}>
       {pkg.best && <div className={styles.bestValue}>Best Value</div>} {/* Add "Best Value" label */}
       <img src={pkg.image} alt={pkg.alt} />
       <h2>{pkg.name}</h2>
       <p>{pkg.title}</p>
       <h3>{pkg.price}</h3>
-      <button>
+      <button className={styles.selectButton}>
         {pkg.button}
         <img src="./public/staticImages/next-white.svg" alt="next" />
       </button>
       {items}
-    </div>
-  )
-}
-
+      {link}
+    </section>
+  );
+};
 
 // Função para renderizar todos os pacotes
 const useRenderPackages = () => {
   return useMemo(() => (
     packagesData.map((pkg, index) => (
-      <div key={index} className={styles.packageContainer}>
+      <section key={index} className={styles.packageContainer}>
         {useRenderPackage(pkg, index)}
         {index === 0 && (
           <div className={styles.videoContainer}>
             <YouTubeIframe videoId="BK9RA3ASsB8" start={3} />
           </div>
         )}
-      </div>
+      </section>
     ))
-  ), [])
-}
+  ), []);
+};
 
 // Componente principal
 const PackagesOptions = () => {
-  const packageList = useRenderPackages()
+  const packageList = useRenderPackages();
 
   return (
     <section className={styles.packages}>
       {packageList}
     </section>
-  )
-}
+  );
+};
 
-export default PackagesOptions
+export default PackagesOptions;

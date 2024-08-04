@@ -99,16 +99,13 @@
       },
       {
         "text": "With significantly more validation services available, professional brief creation, and daily management of your contest by your Branding Expert, you'll receive an enhanced branding experience to closeout your branding project."
-      },
-
-      {
-        "link": [
-          {
-            "href": "https://www.atom.com/managed-contests?title=managed_contest"
-          },
-          { "view": "Learn More about Managed Contest" }
-        ]
       }
+    ],
+    "link": [
+      {
+        "href": "https://www.atom.com/managed-contests?title=managed_contest"
+      },
+      { "view": "Learn More about Managed Contest" }
     ]
   }
 ]
